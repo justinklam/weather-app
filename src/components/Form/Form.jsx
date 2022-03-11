@@ -7,6 +7,7 @@ const Form = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log({location});
   };
 
     return (
@@ -15,8 +16,10 @@ const Form = () => {
                 aria-label="location"
                 type="text"
                 className={`${styles.input} form-control`}
-                placeholder="Search for location"
+                placeholder="Search for a location"
                 required
+                value={location}
+                onChange={e => setLocation(e.target.value)}
             />
 
             <button type="submit" className={styles.button} onClick={onSubmit}>
