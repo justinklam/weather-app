@@ -2,13 +2,15 @@ import React, {useState} from 'react';
 
 import styles from './Form.module.css';
 
-const Form = () => {
+// destructuring props here
+const Form = ({submitSearch}) => {
   const [location, setLocation] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
     // console.log({location});
     if (!location || location === '') return;
+    submitSearch(location);
   };
 
     return (
