@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './Form.module.css';
 
@@ -30,6 +31,10 @@ const Form = ({submitSearch}) => {
             </button>
         </form>
     );
+};
+
+Form.propTypes = {
+  submitSearch: PropTypes.func.isRequired,
 };
 
 export default Form;
