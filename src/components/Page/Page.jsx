@@ -21,9 +21,10 @@ const Page = () => {
             <Header />
             <div className={styles.box}>
               <Form/>
-              {/* <Error/>
-              <Loader/>
-              <Forecast/> */}
+              {/* if state exists, render component */}
+              {isError && <Error message={isError}/>}
+              {isLoading && <Loader />}
+              {forecast && <Forecast />}
             </div>
         </Fragment>
     );
