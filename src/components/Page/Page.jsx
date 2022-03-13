@@ -14,7 +14,7 @@ import useForecast from '../../hooks/useForecast';
 import styles from './Page.module.css';
 
 const Page = () => {
-  useForecast();
+  const {isError, isLoading, forecast} = useForecast();
 
     return (
         <Fragment>
