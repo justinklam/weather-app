@@ -6,13 +6,17 @@ const useForecast = () => {
   const [forecast, setForecast] = useState(null);
 
   // call the api
-  
+  const submitRequest = location => {
+    console.log({location});
+  };
 
   return {
     isError, 
     isLoading, 
-    forecast
-  }
+    forecast,
+    submitRequest
+  };
+  
 };
 
 export default useForecast;
