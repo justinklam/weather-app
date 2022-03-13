@@ -17,8 +17,9 @@ const Page = () => {
   const {isError, isLoading, forecast, submitRequest} = useForecast();
 
   const onSubmit = (value) => {
-    console.log({value});
-  }
+    // console.log({value});
+    submitRequest(value);
+  };
 
     return (
         <Fragment>
