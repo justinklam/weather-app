@@ -11,8 +11,12 @@ const useForecast = () => {
   const [forecast, setForecast] = useState(null);
 
   // call the api
-  const submitRequest = location => {
-    console.log({location});
+  const submitRequest = async location => {
+    // console.log({location});
+
+    // get where on earth_id
+    const response = await axios(`${REQUEST_URL}/search`, {params: {query: location}});
+    // get weather
   };
 
   return {
