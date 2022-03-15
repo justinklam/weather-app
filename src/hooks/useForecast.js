@@ -46,7 +46,8 @@ const useForecast = () => {
     const currentDayDetails = getCurrentDayDetailedForecast(data.consolidated_weather[0]);
     const upcomingDays = getUpcomingDaysForecast(data.consolidated_weather);
 
-    setForecast({currentDay, currentDayDetails, upcomingDays})
+    setForecast({currentDay, currentDayDetails, upcomingDays});
+    setLoading(false);
   };
 
   const submitRequest = async location => {
@@ -60,7 +61,7 @@ const useForecast = () => {
     const data = await getForecastData(response.woeid);
 
     console.log({data});
-    gatherForecastData();
+    gatherForecastData(data);
   };
 
   return {
