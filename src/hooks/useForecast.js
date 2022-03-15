@@ -42,7 +42,7 @@ const useForecast = () => {
   }
 
   const gatherForecastData = (data) => {
-    getCurrentDayForecast();
+    getCurrentDayForecast(data.consolidated_weather[0], data.title);
     getCurrentDayDetailedForecast();
     getUpcomingDaysForecast();
   };
