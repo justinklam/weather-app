@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import locationIcon from './assets/location-pin.png';
 import styles from './CurrentDay.module.css';
 
-const CurrentDay = () => (
+const CurrentDay = ({weekday, date, location, temperature, weatherIcon, weatherDescription}) => (
     <div className="d-flex">
         <div className={styles.img}></div>
         <div className={styles.gradient}></div>
