@@ -35,10 +35,13 @@ const useForecast = () => {
   }
 
   const submitRequest = async location => {
+    setLoading(true);
+    setError(false);
+
     const response = await getWoeid(location);
     const data = await getForecastData(response[0].woeid);
 
-    // console.log({data});
+    console.log({data});
   };
 
   return {
