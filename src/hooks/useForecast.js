@@ -11,17 +11,22 @@ const useForecast = () => {
   const [forecast, setForecast] = useState(null);
 
   // call the api
-  const submitRequest = async location => {    
+  const submitRequest = async location => {
+
     // get where on earth_id
     // destructuring response to pull data out
     const {data} = await axios(`${REQUEST_URL}/search`, {params: {query: location}});
-    // get weather
     console.log({data});
-
+    
     if (!data || data.length === 0) {
-      setError('Location not found, please enter a new location');
+      setError('Location not found, please enter a new location!');
       return;
     }
+    
+    // get weather
+    const response = await axios(`${REQUEST_URL}/${data[0.].woeid}`)
+    console.log({response});
+
   };
 
   return {
