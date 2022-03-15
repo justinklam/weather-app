@@ -20,7 +20,7 @@ const useForecast = () => {
       setError('Location not found, please enter a new location!');
       return;
     }
-    return data;
+    return data[0];
   };
 
   // get weather
@@ -39,7 +39,10 @@ const useForecast = () => {
     setError(false);
 
     const response = await getWoeid(location);
-    const data = await getForecastData(response[0].woeid);
+    // if no response or no woeid, end
+    if (!response?.woeid) return;
+
+    const data = await getForecastData(response.woeid);
 
     console.log({data});
   };
