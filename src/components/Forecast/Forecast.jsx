@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Container, Row, Col } from 'react-bootstrap';
 
 import styles from './Forecast.module.css';
 
-const Forecast = () => (
+const Forecast = ({forecast}) => (
     <Container className={styles.box}>
         <Row>
             <Col xs={12} md={4}>
@@ -14,5 +15,13 @@ const Forecast = () => (
         </Row>
     </Container>
 );
+
+Forecast.propTypes = {
+  forecast: PropTypes.shape({
+    currentDay: PropTypes.object,
+    currentDayDetails: PropTypes.array,
+    upcomingDays: PropTypes.array
+  }),
+};
 
 export default Forecast;
