@@ -44,7 +44,9 @@ const useForecast = () => {
   const gatherForecastData = (data) => {
     const currentDay = getCurrentDayForecast(data.consolidated_weather[0], data.title);
     const currentDayDetails = getCurrentDayDetailedForecast(data.consolidated_weather[0]);
-    const upComingDays = getUpcomingDaysForecast(data.consolidated_weather);
+    const upcomingDays = getUpcomingDaysForecast(data.consolidated_weather);
+
+    setForecast({currentDay, currentDayDetails, upcomingDays})
   };
 
   const submitRequest = async location => {
