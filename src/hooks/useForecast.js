@@ -18,6 +18,7 @@ const useForecast = () => {
 
     if (!data || data.length === 0) {
       setError('Location not found, please enter a new location!');
+      setLoading(false);
       return;
     }
     return data[0];
@@ -29,6 +30,7 @@ const useForecast = () => {
 
     if (!data || data.length === 0) {
       setError('Error locating forecast data');
+      setLoading(false);
       return;
     }
     return data;
