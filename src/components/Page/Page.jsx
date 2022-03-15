@@ -28,8 +28,9 @@ const Page = () => {
               {/* if state exists, render component */}
               {!isLoading && <Form submitSearch={onSubmit} />}
               {isError && <Error message={isError}/>}
-              {forecast && <Forecast />}
+              {isLoading && <Loader />}
             </div>
+            {forecast && <Forecast />}
         </Fragment>
     );
 };
