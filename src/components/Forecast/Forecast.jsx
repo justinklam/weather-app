@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 
 import { Container, Row, Col } from 'react-bootstrap';
 
+import CurrentDay from "../CurrentDay";
+import CurrentDayDescription from "../CurrentDayDescription";
+import UpcomingDaysForecast from "../UpcomingDaysForecast";
+
 import styles from './Forecast.module.css';
 
 const Forecast = ({forecast}) => (
@@ -10,6 +14,7 @@ const Forecast = ({forecast}) => (
         <Row>
             <Col xs={12} md={4}>
                 <div className={styles.card}></div>
+                  <CurrentDay {...forecast.currentDay} />
             </Col>
             <Col xs={12} md={8} className="d-flex flex-column justify-content-between"></Col>
         </Row>
