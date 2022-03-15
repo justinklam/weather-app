@@ -23,13 +23,22 @@ const useForecast = () => {
     return data;
   };
 
-  // call the api
-  const submitRequest = async location => {
-    const data = await getWoeid(location);
-    // get weather
-    const response = await axios(`${REQUEST_URL}/${data[0.].woeid}`)
-    console.log({response});
+  // get weather
+  const getForecastData = async (woeid) => {
+    const {data} = await axios(`${REQUEST_URL}/${woeid}`)
 
+    if (!data || data.length === 0) {
+      setError('Error locating forecast data');
+      return;
+    }
+    return data;
+  }
+
+  const submitRequest = async location => {
+    const response = await getWoeid(location);
+    const data = await getForecastData(response[0].woeid);
+
+    // console.log({data});
   };
 
   return {
