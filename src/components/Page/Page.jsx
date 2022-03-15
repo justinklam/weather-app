@@ -23,14 +23,16 @@ const Page = () => {
 
     return (
         <Fragment>
-            <Header />
-            <div className={`${styles.box} position-relative`}>
-              {/* if state exists, render component */}
-              {!isLoading && <Form submitSearch={onSubmit} />}
-              {isError && <Error message={isError}/>}
-              {isLoading && <Loader />}
-            </div>
-            {forecast && <Forecast />}
+          <Header />
+            {!forecast && (
+              <div className={`${styles.box} position-relative`}>
+                {/* if state exists, render component */}
+                {!isLoading && <Form submitSearch={onSubmit} />}
+                {isError && <Error message={isError}/>}
+                {isLoading && <Loader />}
+              </div>
+            )}
+            {forecast && <Forecast forecast={''} />}
         </Fragment>
     );
 };
