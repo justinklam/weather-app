@@ -14,6 +14,7 @@ const CurrentDay = ({weekday, date, location, temperature, weatherIcon, weatherD
               <p className="mb-0">{date}</p>
               <p className="d-flex align-items-baseline font-weight-lighter mb-1">
                 <img width="10" height="15" src={locationIcon} className="mr-1" alt="location pin icon" /></p>
+                <span>{location}</span>
             </div>
             <div></div>
         </div>
