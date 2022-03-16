@@ -15,13 +15,13 @@ const CurrentDay = ({weekday, date, location, temperature, weatherIcon, weatherD
     </div>
 );
 
-// CurrentDay.propTypes = {
-//   weekday, 
-//   date, 
-//   location, 
-//   temperature, 
-//   weatherIcon, 
-//   weatherDescription
-// };
+CurrentDay.propTypes = {
+  weekday: PropTypes.string.isRequired, 
+  date: PropTypes.string.isRequired, 
+  location: PropTypes.string.isRequired, 
+  temperature: PropTypes.string.isRequired, 
+  weatherIcon: PropTypes.number.isRequired, 
+  weatherDescription: PropTypes.string.isRequired
+};
 
 export default CurrentDay;
