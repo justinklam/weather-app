@@ -14,27 +14,30 @@ import useForecast from '../../hooks/useForecast';
 import styles from './Page.module.css';
 
 const Page = () => {
-  const {isError, isLoading, forecast, submitRequest} = useForecast();
+  const { isError, isLoading, forecast, submitRequest } = useForecast();
 
-  const onSubmit = (value) => {
+  const onSubmit = value => {
     // console.log({value});
-    submitRequest(value);
+      submitRequest(value);
   };
 
-    return (
-        <Fragment>
+  return (
+      <Fragment>
           <Header />
-            {!forecast && (
+          {!forecast && (
               <div className={`${styles.box} position-relative`}>
-                {/* if state exists, render component */}
-                {!isLoading && <Form submitSearch={onSubmit} />}
-                {isError && <Error message={isError}/>}
-                {isLoading && <Loader />}
+                  {/* Form */}
+                  {!isLoading && <Form submitSearch={onSubmit} />}
+                  {/* Error */}
+                  {isError && <Error message={isError} />}
+                  {/* Loader */}
+                  {isLoading && <Loader />}
               </div>
-            )}
-            {forecast && <Forecast forecast={forecast} />}
-        </Fragment>
-    );
+          )}
+          {/* Forecast */}
+          {forecast && <Forecast forecast={forecast} />}
+      </Fragment>
+  );
 };
 
 export default Page;
