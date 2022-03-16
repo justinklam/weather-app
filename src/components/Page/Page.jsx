@@ -32,7 +32,6 @@ const Page = () => {
                 {isLoading && <Loader />}
               </div>
             )}
-            {/* prop needed for Forecast */}
             {forecast && <Forecast forecast={forecast} />}
         </Fragment>
     );

@@ -15,4 +15,13 @@ const CurrentDay = ({weekday, date, location, temperature, weatherIcon, weatherD
     </div>
 );
 
+// CurrentDay.propTypes = {
+//   weekday, 
+//   date, 
+//   location, 
+//   temperature, 
+//   weatherIcon, 
+//   weatherDescription
+// };
+
 export default CurrentDay;
