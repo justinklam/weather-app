@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './UpcomingDaysForecastItem.module.css';
 
@@ -11,5 +12,11 @@ const UpcomingDaysForecastItem = ({ weekday, temperature, imgUrl }) => (
         <span className="font-weight-bold">{temperature}&deg;</span>
     </li>
 );
+
+UpcomingDaysForecastItem.propTypes = {
+  weekday: PropTypes.string.isRequired,
+  temperature: PropTypes.string.isRequired,
+  imgUrl: PropTypes.string.isRequired,
+};
 
 export default UpcomingDaysForecastItem;
