@@ -1,18 +1,17 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Form.module.css';
 
-// destructuring props here
-const Form = ({submitSearch}) => {
-  const [location, setLocation] = useState('');
+// destructuring props immediately here
+const Form = ({ submitSearch }) => {
+    const [location, setLocation] = useState('');
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    // console.log({location});
-    if (!location || location === '') return;
-    submitSearch(location);
-  };
+    const onSubmit = e => {
+        e.preventDefault();
+        if (!location || location === '') return;
+        submitSearch(location);
+    };
 
     return (
         <form onSubmit={onSubmit}>
@@ -20,7 +19,7 @@ const Form = ({submitSearch}) => {
                 aria-label="location"
                 type="text"
                 className={`${styles.input} form-control`}
-                placeholder="Search for a location"
+                placeholder="Search for location"
                 required
                 value={location}
                 onChange={e => setLocation(e.target.value)}
@@ -34,7 +33,7 @@ const Form = ({submitSearch}) => {
 };
 
 Form.propTypes = {
-  submitSearch: PropTypes.func.isRequired,
+    submitSearch: PropTypes.func.isRequired,
 };
 
 export default Form;
