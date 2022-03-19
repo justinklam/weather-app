@@ -20,7 +20,7 @@ Communication tool:
 
 ## Preview
 
-<img src="/placeholder" height="500" style="border-radius:10px;margin-bottom:1rem;" />
+<img src="./public/assets/weather-preview.png" height="500" style="border-radius:10px;margin-bottom:1rem;" />
 
 ## Instructions
 
