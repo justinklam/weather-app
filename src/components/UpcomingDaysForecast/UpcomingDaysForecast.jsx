@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import UpcomingDaysForecastItem from '../UpcomingDaysForecastItem';
 
@@ -11,5 +12,9 @@ const UpcomingDaysForecast = ({ days }) => (
         ))}
     </ul>
 );
+
+UpcomingDaysForecast.propTypes = {
+    days: PropTypes.array.isRequired,
+};
 
 export default UpcomingDaysForecast;
