@@ -1,4 +1,4 @@
-# Weather-React
+# Weather-App
 
 ---
 
