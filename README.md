@@ -1,10 +1,14 @@
-# Weather-React
+# Weather-App
 
 ---
 
 ## Description
 
 <p>Project showcasing React and Axios calls to an MetaWeather API</p>
+
+## Preview
+
+<img src="./public/assets/weather-preview.png" height="500" style="border-radius:10px;margin-bottom:1rem;" />
 
 ### Tech stack
 
@@ -17,10 +21,6 @@ Core:
 Communication tool:
 - axios
 ```
-
-## Preview
-
-<img src="./public/assets/weather-preview.png" height="500" style="border-radius:10px;margin-bottom:1rem;" />
 
 ## Instructions
 
